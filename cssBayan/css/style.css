@@ -1,3 +1,20 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 .body {
     height: 100%;
     background-color: rgb(136, 172, 240);
@@ -14,8 +31,13 @@
 }
 
 .list {
+    color: black;
     max-width: 600px;
     margin: 20px auto 0;
+}
+
+.list:hover {
+    color: blue;
 }
 
 .item {
@@ -31,7 +53,6 @@
 
 .item-input:checked~.item-title .item-img,
 .item:hover .item-img {
-    /* display: block; */
     opacity: 1;
     height: 100%;
     margin-top: 20px;
@@ -39,7 +60,10 @@
     transition: transform 0.5s ease-in-out;
 }
 
-/* .item-title:hover .item-img */
+.item-input~.item-title:active {
+    color: black;
+    opacity: 0.7;
+}
 
 .item-input:checked~.item-title {
     color: blue;
@@ -59,7 +83,8 @@
     opacity: 0;
 }
 
-.item-input:checked~.item-title .title-icon {
+.item-input:checked~.item-title .title-icon,
+.item-input:hover~.item-title .title-icon {
     transform: rotate(180deg);
     transition: transform 0.5s ease-in-out;
 }
@@ -73,6 +98,7 @@
     opacity: 0;
     height: 0;
     transform: scale(0);
+    transition: all 0.2s ease-in-out;
 }
 
 .item-img img {
