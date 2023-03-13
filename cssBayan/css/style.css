@@ -159,6 +159,10 @@ html {
         color: blue;
     }
 
+    .item:hover {
+        cursor: pointer;
+    }
+
     .item:hover .item-img {
         opacity: 1;
         height: 100%;
